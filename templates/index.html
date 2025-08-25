@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FrostBoyz – Icy Jewelry</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Topbar cu logo + hamburger -->
+  <header class="topbar">
+    <a href="/" class="brand" aria-label="FrostBoyz homepage">
+      <span class="brand__logo">FrostBoyz</span>
+    </a>
+
+    <button class="hamburger" id="hamburger"
+            aria-label="Open menu" aria-controls="site-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Meniul care se deschide -->
+    <nav id="site-menu" class="menu" aria-hidden="true">
+      <div class="menu__inner" role="menu">
+        <a role="menuitem" href="#home" class="menu__item">Home</a>
+        <a role="menuitem" href="#why" class="menu__item">Why FrostBoyz</a>
+        <a role="menuitem" href="#drops" class="menu__item">Upcoming Drops</a>
+       <a role="menuitem" href="/instagram" class="menu__item">Instagram</a>
+        <a role="menuitem" href="#contact" class="menu__item">Contact</a>
+        <div class="menu__divider"></div>
+        <a role="menuitem" href="#policies" class="menu__item">Shipping & Returns</a>
+        <a role="menuitem" href="#policies" class="menu__item">Privacy & Terms</a>
+        <div class="menu__cta">
+          <form class="mini-form" action="#" method="post" onsubmit="return false;">
+            <label for="email" class="sr-only">Get updates</label>
+            <input id="email" type="email" placeholder="Get updates (email)">
+            <button type="submit" class="btn btn--outline">Notify me</button>
+          </form>
+          <p class="trust">
+            <span class="lock">🔒</span> Secure browsing • No spam
+          </p>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Overlay pentru focus/închidere -->
+    <div id="menu-backdrop" class="backdrop" hidden></div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero">
+      <h1 class="logo">FrostBoyz</h1>
+      <p class="slogan">Icy Jewelry for Cold Hearts</p>
+      <a href="https://instagram.com/FrostBoyz" target="_blank" class="btn">🔗 Follow on Instagram</a>
+    </section>
+
+    <!-- WHY -->
+    <section id="why" class="why reveal">
+      <h2>Why FrostBoyz?</h2>
+      <ul>
+        <li>❄️ Trap-inspired designs with a clean, premium finish</li>
+        <li>🧊 Stainless steel / sterling silver options (coming soon)</li>
+        <li>🎯 Designed in Bucharest • Fast shipping</li>
+      </ul>
+    </section>
+
+    <!-- NEXT DROP (countdown) -->
+<section id="next-drop" class="next-drop reveal">
+  <h2>Next Drop</h2>
+  <p class="next-drop__subtitle">Limited pieces • First come, first served</p>
+
+  <div class="countdown" aria-live="polite">
+    <div class="cd-box">
+      <span id="cd-days">00</span>
+      <label>Days</label>
+    </div>
+    <div class="cd-box">
+      <span id="cd-hours">00</span>
+      <label>Hours</label>
+    </div>
+    <div class="cd-box">
+      <span id="cd-mins">00</span>
+      <label>Minutes</label>
+    </div>
+    <div class="cd-box">
+      <span id="cd-secs">00</span>
+      <label>Seconds</label>
+    </div>
+  </div>
+
+  <p class="next-drop__hint">Get ready. Don’t blink.</p>
+</section>
+
+
+    <!-- DROPS -->
+    <section id="drops" class="gallery reveal">
+  <h2>Upcoming Drops</h2>
+  <div class="grid">
+      <div class="item shine">[ IMG ]</div>
+      <div class="item shine">[ IMG ]</div>
+      <div class="item shine">[ IMG ]</div>
+  </div>
+  <p class="soon">More soon...</p>
+</section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>DM pe Instagram: <a href="https://instagram.com/FrostBoyz" target="_blank">@FrostBoyz</a></p>
+      <p>Orice întrebare: <a href="mailto:hello@frostboyz.com">hello@frostboyz.com</a></p>
+    </section>
+
+    <!-- POLICIES (dummy pentru încredere inițială) -->
+    <section id="policies" class="policies">
+      <h2>Policies</h2>
+      <ul>
+        <li>30‑day returns (for manufacturing defects) – <em>details soon</em></li>
+        <li>Secure checkout – <em>soon via Stripe/PayPal</em></li>
+        <li>Privacy‑first: we don’t sell your data</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 FrostBoyz. All rights reserved.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

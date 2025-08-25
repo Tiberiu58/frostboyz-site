@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FrostBoyz – Instagram</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="/" class="brand" aria-label="FrostBoyz homepage">
+      <span class="brand__logo">FrostBoyz</span>
+    </a>
+    <a href="/" class="btn btn--outline small">⟵ Back</a>
+  </header>
+
+  <main class="ig-page">
+    <section class="hero hero--compact">
+      <h1 class="logo">Instagram</h1>
+      <p class="slogan">Follow pentru drops, stories & behind-the-scenes</p>
+      <!-- CTA direct către profil -->
+      <a href="https://instagram.com/FrostBoyz" target="_blank" class="btn">🔗 Open @FrostBoyz</a>
+      <p class="hint">Tip: deschide și dă Follow ca să prinzi anunțurile de lansare.</p>
+    </section>
+
+    <!-- EMBED FEED (variantă rapidă cu iframe – înlocuiește src când ai codul) -->
+    <section class="embed">
+      <h2>Latest Posts</h2>
+
+      <!-- 1) Până configurezi un widget, afișăm un placeholder curat -->
+      <div class="embed__placeholder">
+        <p>Feed-ul va apărea aici. Între timp, click pe „Open @FrostBoyz”.</p>
+      </div>
+
+      <!-- 2) Când ești gata, înlocuiește placeholder-ul cu un iframe de la un serviciu de embed:
+           - SnapWidget (gratuit, are watermark) sau LightWidget (ieftin, curat)
+           EXEMPLE:
+           <iframe src="https://snapwidget.com/embed/xxxxxxxx" class="embed__frame" allowtransparency="true" scrolling="no" loading="lazy"></iframe>
+           sau
+           <iframe src="https://lightwidget.com/widgets/xxxxxxxx.html" class="embed__frame" scrolling="no" loading="lazy"></iframe>
+      -->
+
+      <!-- 3) Dacă vrei doar un singur post, Instagram oferă oEmbed pentru URL-ul postării.
+           Exemplu (înlocuiește URL-ul postării):
+           <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POST_ID/" data-instgrm-version="14"></blockquote>
+           <script async src="//www.instagram.com/embed.js"></script>
+      -->
+    </section>
+
+    <section class="policies">
+      <h2>Why trust this page?</h2>
+      <ul>
+        <li>Link direct către contul oficial FrostBoyz</li>
+        <li>Ușor de verificat: stories & highlights cu producție, materiale, feedback</li>
+        <li>Transparent: update-uri live despre drops și restocks</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 FrostBoyz. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
