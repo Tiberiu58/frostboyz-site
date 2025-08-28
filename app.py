@@ -13,6 +13,10 @@ CORS(app, resources={
     }
 })
 
+@app.post("/webhook")            # <- EXACT așa, fără prefixe
+def webhook():
+    return "", 200
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -24,8 +28,9 @@ def health():
 @app.route('/api/products')
 def products():
     return jsonify([
-        {"id": 1, "name": "Cuban Chain", "price": 49.99, "img": "https://picsum.photos/200"},
-        {"id": 2, "name": "Tennis Chain", "price": 59.99, "img": "https://picsum.photos/201"}
+        {"id": 1, "name": "Cuban Chain 8mm", "price": 49.99, "img": "https://picsum.photos/seed/cuban/640/640", "badge": "New"},
+        {"id": 2, "name": "Tennis Chain 3mm", "price": 59.99, "img": "https://picsum.photos/seed/tennis/640/640", "badge": "Hot"},
+        {"id": 3, "name": "Rope Chain 4mm", "price": 39.99, "img": "https://picsum.photos/seed/rope/640/640", "badge": "Drop Soon"}
     ])
 
 if __name__ == '__main__':

@@ -405,3 +405,76 @@ img {
   }
 }
 
+/* ===== Countdown: responsive tweaks ===== */
+
+/* Tablete mici și telefoane mari */
+@media (max-width: 768px) {
+  .next-drop {
+    padding: 32px 14px;
+  }
+  .countdown {
+    gap: 10px;
+    padding: 10px;
+  }
+  .cd-box {
+    padding: 12px 10px;
+    min-width: auto; /* nu mai forța lățime fixă */
+  }
+  .cd-box span {
+    /* scalează inteligent pe lățimea ecranului */
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+  }
+  .cd-box label {
+    font-size: .75rem;
+  }
+}
+
+/* Telefoane uzuale (iPhone/Android) – 2 coloane */
+@media (max-width: 520px) {
+  .countdown {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    width: 100%;
+  }
+  .next-drop__subtitle {
+    font-size: .9rem;
+  }
+}
+
+/* Telefoane mici – compresie suplimentară */
+@media (max-width: 390px) {
+  .countdown {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
+  .cd-box {
+    padding: 10px 8px;
+  }
+  .cd-box span {
+    font-size: clamp(1.3rem, 9vw, 1.8rem);
+    letter-spacing: .5px;
+  }
+  .cd-box label {
+    font-size: .7rem;
+  }
+  /* dacă ai pus data-short în HTML, afișează varianta scurtă */
+  .cd-box label::after {
+    content: attr(data-short);
+  }
+  .cd-box label {
+    /* ascunde textul lung, păstrează doar data-short prin ::after */
+    color: transparent;
+    position: relative;
+  }
+  .cd-box label::after {
+    position: absolute;
+    inset: 0;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  /* putem ascunde hint-ul sub countdown pe ecrane foarte mici */
+  .next-drop__hint { display: none; }
+}
+
+@media (max-width: 520px) {
+  .next-drop__subtitle { display: none; }
+}
